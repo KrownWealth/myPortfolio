@@ -18,7 +18,7 @@ comment
 body 
 {
    line-height: 1.5;
-   font-size: 16px;
+   font-size: 18px;
    font-family: 'Poppins' sans-serif;
     
 }
@@ -40,15 +40,33 @@ ul {
     list-style: none;
 }
 
-.section
+section
 {
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
-    left: 270px;
     padding: 0 30px;
     opacity: 1;
-    
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top:40px;
+    transition: all 0.3s ease;
+}
+section.back-section
+{
+    z-index: 1;
+}
+section.active
+{
+    z-index: 2;
+    opacity: 1;
+    animation: slideSection 1s ease;
 }
 
 /* this can be use to add pages*/
@@ -56,12 +74,22 @@ ul {
 {
     display: none !important;
 }
+
+@keyframes slideSection
+{
+    0%
+    {
+        transform: translateX(100%);
+    }
+
+    100%
+    {
+        transform: translateX(0%);
+    }
+
+}
 /**/
 
-.main-content
-{
-    padding-left: 270px;
-}
 
 .padd-15
 {
@@ -137,7 +165,7 @@ ul {
 
 .btn
 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     padding: 12px 35px;
     color: white;
@@ -179,6 +207,7 @@ SIDE-BAR
     left: 0;
     top:0;
     z-index: 10;
+    transition: all 0.3s ease;
 }
 
 .sidebar .logo 
@@ -243,6 +272,7 @@ left: 0;
     display: none;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 
 }
 
@@ -256,6 +286,10 @@ left: 0;
     
 }
 
+.sidebar .nav-toggler.open span
+{
+    background-color: transparent;
+}
 .sidebar .nav-toggler span::before
 {
     content: '';
@@ -266,7 +300,12 @@ left: 0;
     top:-6px;
     left:0;
 }
+.sidebar .nav-toggler.open span::before
+{
+    transform: rotate(45deg);
+    top:0;
 
+}
 .sidebar .nav-toggler span::after
 {
     content: '';
@@ -277,15 +316,20 @@ left: 0;
     top:6px;
     left:0;
 }
-
+.sidebar .nav-toggler.open span::after
+{
+    transform:rotate(-45deg);
+    top:0;
+    
+}
 .sidebar .nav 
 {
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 .sidebar .nav li 
 {
-    margin-bottom: 5px;
+    
     display: block;
 }
 
@@ -295,16 +339,16 @@ left: 0;
     text-decoration: none;
     color:var(--text-black-900);
     display: block;
-    line-height: 30px;
+    line-height: 40px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     padding: 5px 15px;
 }
 
 .sidebar .nav li a:hover
  {
-    background-color: hotpink;
+    background-color: var(--text-black-900);
 }
 
 .sidebar .nav li a.active {
@@ -320,7 +364,7 @@ left: 0;
 
 .social p 
 {
-    margin-top: 40px;
+    margin-top: 30px;
     padding-left: 20px;
     margin-bottom: 10px;
     color: var(--text-black-900);
@@ -328,7 +372,7 @@ left: 0;
 .social ul li 
 {
     display: inline-block;
-    padding-left: 20px;
+    padding-left: 10px;
     
     
 }
@@ -392,6 +436,7 @@ h3.hello span
 {
     margin-bottom: 70px;
     font-size: 20px;
+    text-align: justify;
     color: var(--text-black-700);
 }
 .home_section .home-img
@@ -448,6 +493,8 @@ About
 {
     flex: 0 0 100%;
     max-width: 100%;
+    margin-bottom: 80px;
+    
     
 }
 .about_section .about-content .about-text
@@ -484,6 +531,7 @@ About
     line-height: 25px;
     color: var(--text-black-700);
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 .about_section .about-content .personal-info
@@ -491,6 +539,7 @@ About
     flex:  0 0 50%;
     max-width: 50%;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .about_section .about-content .personal-info .info-items
@@ -508,7 +557,6 @@ About
    color: var(--text-black-900);
    line-height: 40px;
   
-   
 }
 
 
@@ -519,21 +567,18 @@ About
    
 }
 
-.about_section .about-content .personal-info .buttons
-{
-    margin-top: 30px;
-}
-
 .about_section .about-content .personal-info .buttons .btn
 {
     margin-right: 15px;
     margin-top: 10px;
 }
+
 .about_section .about-content .skills
 {
     flex: 0 0 50%;
     max-width: 50%;
     margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .about_section .about-content .skills .skill-item
@@ -595,7 +640,8 @@ About
 {
 flex: 0 0 50%;
 max-width: 50%;
-margin-top: 30px;
+margin-top: 40px;
+margin-bottom: 60px;
 
 }
 .about_section .about-content h3.title
@@ -677,6 +723,7 @@ padding-bottom: 0;
     font-size: 14px;
     margin-bottom: 12px;
     color: var(--text-black-700);
+    padding-top: 20px;
 }
 
 
@@ -702,6 +749,8 @@ padding-bottom: 0;
     font-size: 16px;
     text-align: justify;
     color: var(--text-black-700);
+    padding-left: 10px;
+    padding-right: 15px;
 }
 
 /*
@@ -715,7 +764,7 @@ offer
 {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 70px;
+    margin-bottom: 80px;
     
 }
 .offer_section .offer-content .offer-text
@@ -724,9 +773,10 @@ offer
     max-width: 100%;
   
 }
+
 .offer_section .offer-content .offer-text
 {
-    font-size: 16px;
+    font-size: 25px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
@@ -735,7 +785,7 @@ offer
 .offer_section .offer-content .offer-text h3
 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 700;
     color: var(--text-black-900);
 }
@@ -746,18 +796,15 @@ offer
 
 }
 
-.offer_section .offer-content .offer-text p
+.offer_section .offer-content .offer-text p,
+.offer_section .offer-content .offer-info p
 {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 20px;
     color: var(--text-black-700);
     text-align: justify;
 }
 
-.offer_section .offer-content .offer-info 
-{
-    margin-top: 40px;
-}
 .offer_section .offer-content .offer-info p span
 {
     color: var(--text-black-900);
@@ -765,17 +812,17 @@ offer
 }
 
 
-.offer_section .offer-content .offer-info li
+.offer_section .offer-content .offer-text .my-offer li,
+.offer_section .offer-content .offer-info .my-offer li
 {
 list-style-type: disc;
+color: var(--text-black-900);
+line-height: 25px;
+font-size: 16px;
+text-align: justify;
 }
 
-.offer_section .offer-content .offer-text .my-offer li
-{
-  list-style-type: disc;
-  color: var(--text-black-900);
-  line-height: 35px;
-}
+
 
 .offer_section .offer-content .offer-done
 {
@@ -836,6 +883,7 @@ Contact
 {
     flex: 0 0 100%;
     max-width: 100%;
+    margin-bottom: 80px;
     
 }
 
@@ -905,7 +953,9 @@ Contact
     margin-bottom: 20px;
     padding: 10px;
     font-size: 24px;
+    width:400px;
     color: var(--text-black-700);
+    height:200px;
 }
 
 
@@ -941,6 +991,10 @@ Portfolio
     margin-bottom: 30px;
 }
 
+.portfolio_section .portfolio-item-inner .details p
+{
+margin-top: 20px;
+}
 
 .portfolio_section .portfolio-img img
 {
@@ -950,3 +1004,299 @@ Portfolio
     margin-bottom: 80px;
 }
 
+
+/*
+===================
+Media Queries
+===================
+*/
+
+
+
+@media screen and (max-width: 1440px) {
+
+body {font-size: 25px;}
+
+.sidebar
+ {
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    }
+ 
+.sidebar .logo a span {font-size: 35px;}
+
+.sidebar .logo a {padding: 10px 10px;}
+}
+
+  
+@media screen and (max-width: 1024px) {
+
+.home_section .home-info
+{
+    flex: 0 0 55%;
+    max-width: 55%;
+}
+
+h3.hello, 
+.h3.myprofession
+{
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+h3.hello span {font-size: 25px;}
+
+.home-info p {font-size: 18px;}
+
+.home_section .home-img
+    {
+        flex: 0 0 25%;
+        max-width: 25%;
+       
+    }
+    .home_section .home-img img 
+    {
+        height: 300px;
+        border-radius: 5px;
+        margin: auto;
+        background: red;
+      
+    }
+    
+    .home-img::after
+    {
+       height: 50px;
+        width: 50px;
+        right: -100px;
+        bottom: -40px;
+    
+    }
+    
+    .home-img::before
+    {
+       height: 50px;
+        width: 50px;
+        left: -20px;
+        top: -40px;
+    
+    }
+    
+.about_section .about-content
+
+
+
+.about_section .about-content .personal-info
+{
+    flex:  0 0 100%;
+    max-width: 100%;
+   
+}
+
+.about_section .about-content .skills
+{
+    flex:  0 0 100%;
+    max-width: 100%;
+
+}
+
+
+.about_section .about-content .education,
+.about_section .about-content .experience
+{
+flex: 0 0 100%;
+max-width: 100%;
+}
+    
+  
+.portfolio_section .portfolio-item {margin-bottom: 60px;}
+
+
+.portfolio_section .portfolio-img img
+{
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-bottom: 50px;
+}
+
+} 
+
+@media screen and (max-width: 768px) {
+
+
+.sidebar
+{
+    left: -270px;
+}
+
+.sidebar.open
+{
+    left: 0;
+}
+.sidebar .nav-toggler
+{
+    display: flex;
+    left: 30px;
+}
+
+.sidebar .nav-toggler.open
+{
+    left: 300px;
+}
+
+section
+{
+    left: 0;
+}
+
+section.open
+{
+    left:270px;
+}
+
+.social p 
+{
+    margin-top: 250px;
+    margin-bottom: 5px;
+   
+}
+
+.portfolio_section .portfolio-img img
+    {
+        width: 320px;
+        height: 320px;
+        display: block;
+        margin-bottom: 50px;
+    }
+    
+}
+
+@media screen and (max-width: 425px) 
+{
+
+.home_section .home-info
+        {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    
+.home_section .home-img {display: none;}
+
+.offer_section .offer-content .offer-text h3,
+.offer-content .offer-info h3
+{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.offer_section .offer-content .offer-text h6,
+.offer_section .offer-content .offer-info h6
+
+{
+    margin-bottom: 15px;
+}
+
+.offer_section .offer-content .offer-done,
+.offer_section .offer-content .offer-items,
+.offer_section .offer-content .offer-team
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}
+.offer_section .offer-content .offer-team
+{
+    margin-bottom: 40px;
+}
+
+.offer_section .offer-content .done-items {font-size: 20px;}
+
+.offer_section .offer-content .offer-done,
+.offer_section .offer-content .offer-itmes,
+.offer_section .offer-content .offer-team
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    
+
+}
+.offer_section .offer-content .offer-info .my-offer li 
+{
+    text-align: justify;
+}
+
+.offer_section .offer-content .job-sample p 
+{
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.portfolio_section .portfolio-item
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.portfolio_section .portfolio-img img
+    {
+        width: 365px;
+        height: 365px;
+        
+    }
+    
+ 
+.contact_section .contact-content .message .message-box,
+.contact_section .contact-content .message textarea
+
+ {width: 350px;}
+
+
+ 
+@media screen and (max-width: 375px) 
+{
+
+.portfolio_section .portfolio-heading h5 
+{
+    font-size: 16px;
+}
+.portfolio_section .portfolio-img img
+{
+    width: 300px;
+    height: 300px;
+    
+} 
+
+ 
+.btn 
+{
+    font-size: 10px;
+    font-weight: 500;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 50px;
+}
+
+   
+ 
+.contact_section .contact-content .message .message-box,
+.contact_section .contact-content .message textarea
+
+ {width: 300px;}
+
+ 
+.contact_section .contact-content .contact-info li
+{
+   font-size: 14px;
+    line-height: 20px;
+}
+
+}
+
+}
