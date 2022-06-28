@@ -348,7 +348,7 @@ left: 0;
 
 .sidebar .nav li a:hover
  {
-    background-color: var(--text-black-900);
+    background-color:#F15D74;
 }
 
 .sidebar .nav li a.active {
@@ -1293,7 +1293,7 @@ section.open
  
 .contact_section .contact-content .contact-info li
 {
-   font-size: 14px;
+   font-size: 12px;
     line-height: 20px;
 }
 
