@@ -1,6 +1,6 @@
 /*=============typing================*/
 var typed = new Typed(".typing",{
-strings:["Web Developer", "Web Designer", "Graphic Designer"],
+strings:["Web Developer", "Web Designer"],
 typeSpeed:100,
 BackSpeed:60,
 lopp:true
