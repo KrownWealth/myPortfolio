@@ -1010,27 +1010,217 @@ CV
 ===================
 */
 
-.cv-container 
+body.cv-container 
 {
     width: 100%;
     height: 100%;
-    background: var(--bg-black-50);
+    background: var(--bg-black-100);
     display: block;
     align-items: center;
     justify-content: center;
+    
+    
 }
 
 .cv-container .cv-page
 {
-    width: 90%;
+    width: 70%;
     height: 100%;
-    background: var(--bg-black-100);
+    background: var(--bg-black-50);
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: none;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 80px;
+   margin-bottom: 80px;  
+   padding: 80px;  
+   
 }
 
+.cv-section
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.cv-section ul li
+{
+    list-style-type: disc;
+}
+
+.cv-section .cv-header-avatar
+{
+    flex: 0 0 5%;
+    max-width: 5%;
+    float: left;
+    
+    
+    
+}
+
+
+.cv-section .cv-header-avatar img
+{
+    width: 150px;
+    height: 170px;
+}
+
+.cv-section .cv-header-text
+{
+    float: left;
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-left: 120px;
+    margin-right: 20px;
+    line-height: 1; 
+}
+
+.cv-section .cv-header-text h4
+{
+    color: var(--text-black-700);
+}
+
+.cv-section .cv-header-text h3
+{
+    left: 0;
+    font-size: 24px;
+    text-align: justify;
+    line-height: 1;
+    color: var(--skin-color);
+}
+
+
+.cv-section .cv-header-text h4 {font-size: 24px;}
+
+.cv-section .cv-header-text p
+
+{
+  
+    font-size: 14px;
+    text-align: justify;
+
+}
+
+
+
+.cv-section .cv-header-social
+{
+    float: left;
+    flex: 0 0 5%;
+    max-width: 5%;
+    
+    
+}
+
+
+.cv-section .cv-header-social .meta-social li
+{
+    font-size: 12px;
+   
+}
+
+
+.cv-section .cv-header-social .meta-social li
+{
+   list-style-type: none;
+   
+}
+
+
+.cv-section .cv-header-social .meta-social li a
+{
+  color: var(--skin-color);
+   
+}
+
+
+.cv-section .cv-section-title 
+{
+    flex: 0 0 70%;
+    max-width: 70%;
+    float: left;
+    left: 0;
+    margin-left: 200px;
+    
+}
+
+
+.cv-section .cv-section-title h3
+{
+    margin-top: 15px;
+    font-size: 24px;
+    color: var(--skin-color);
+}
+.cv-section-title .cv-section-content
+{
+    font-size: 18px;
+}
+
+.cv-section-content .cv-timeline
+{
+    float: left;
+    display: flex;
+    margin-top: 20px;
+    margin-left: -120px;
+}
+
+.cv-section .cv-section-content .cv-timeline .cv-timeline-side { margin-left: -120px;}
+
+
+
+.cv-section .cv-section-content .cv-timeline .cv-timeline-side .cv-time-company h6
+{
+font-size: 12px;
+background: var(--bg-black-100);
+color: var(--text-black-700);
+width: 210px;
+text-align: end;
+padding: 2px;
+text-transform: uppercase;
+}
+
+.cv-section .cv-section-content .cv-timeline .cv-timeline-side .cv-time-date p
+{
+font-size: 14px;
+margin-left: 80px;
+text-align: end;
+}
+
+
+.cv-section .cv-section-content .cv-timeline-body
+{
+    margin-top: 10px;
+}
+
+.cv-section .cv-section-content .cv-timeline-body .cv-timeline-position 
+{
+    font-size: 18px;
+    color: var(--text-black-900);
+    text-align: justify;
+}
+
+
+
+
+.cv-section .cv-section-content .cv-timeline-body .cv-timeline-position ul li
+{
+    font-size: 14px;
+    list-style: circle;
+    text-align: justify;
+}
+
+.cv-section .cv-section-content .cv-timeline-body ul li span
+{
+   
+    color: var(--skin-color);
+    
+}
+hr
+{
+    display: none;
+}
 /*
 ===================
 Media Queries
@@ -1053,7 +1243,9 @@ body {font-size: 25px;}
 .sidebar .logo a span {font-size: 35px;}
 
 .sidebar .logo a {padding: 10px 10px;}
+
 }
+
 
   
 @media screen and (max-width: 1024px) {
@@ -1146,6 +1338,41 @@ max-width: 100%;
     margin-bottom: 50px;
 }
 
+
+.cv-container .cv-page
+{
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    left:50px;
+    padding: 50px;  
+     
+   
+}
+
+
+
+.cv-section .cv-header-text h3,
+.cv-section .cv-header-text h4,
+.cv-section .cv-section-title h3
+{
+    font-size: 18px;
+    
+}
+
+
+.cv-section
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+     width: 100%;
+    margin-bottom: 40px;
+}
+
+
+
 } 
 
 @media screen and (max-width: 768px) {
@@ -1195,6 +1422,87 @@ section.open
         display: block;
         margin-bottom: 50px;
     }
+    
+.cv-container .cv-page
+{
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;  
+    
+}
+
+hr.myhr
+{
+    display: none;
+}
+
+.cv-section .cv-header-text h3,
+.cv-section .cv-header-text h4
+
+{   
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;  
+    margin-left: 60px;
+   
+   
+}
+
+
+.cv-section .cv-header-text 
+
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;  
+    
+}
+
+.cv-section .cv-header-social
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;  
+    margin-left: 80px;
+}
+
+.cv-section .cv-header-avatar
+
+{
+     
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;  
+    margin-left: 250px;
+}
+
+.cv-section .cv-header-text h3,
+.cv-section .cv-header-text h4,
+.cv-section .cv-section-title h3
+{
+    font-size: 24px;
+       
+}
+
+
+.cv-section .cv-header-text p
+{
+  
+    font-size: 16px;
+    text-align: center;
+    margin-left: -250px;
+
+}
+
+
+.cv-section .cv-header-social .meta-social li
+{
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+   
+}
+
     
 }
 
@@ -1283,6 +1591,172 @@ section.open
 
  {width: 350px;}
 
+  
+.cv-container .cv-page
+{
+    width: 100%;
+    display: block;  
+   
+   
+}
+
+
+
+.cv-section .cv-section-title 
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    left: 0;
+    margin-left: 0;
+    
+}
+
+.cv-section .cv-header-text,
+.cv-section .cv-header-avatar,
+.cv-section .cv-header-social
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cv-section .cv-header-avatar
+{
+    margin-left: 60px;
+}
+
+
+.cv-section .cv-header-text h3,
+.cv-section .cv-header-text h4,
+.cv-section .cv-section-title h3
+{
+    font-size: 18px;
+    
+    
+}
+
+
+.cv-section .cv-header-text h3,
+.cv-section .cv-header-text h4
+{
+    margin-left: 35px;
+    line-height: 0.5;
+}
+
+
+.cv-section .cv-header-text p
+{
+  
+    font-size: 14px;
+    text-align: center;
+    margin-left: -45px;
+
+}
+
+
+.cv-section .cv-header-social .meta-social li
+{
+    font-size: 8px;
+    margin-left: -15px;
+    
+}
+
+
+.cv-section-content .cv-timeline
+{
+    float: left;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+
+.cv-section .cv-section-content .cv-timeline-body,
+.cv-section .cv-section-content .cv-timeline-body .cv-timeline-position
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.cv-section-content .cv-timeline .cv-timeline-side
+{
+    display: flex;
+    max-width: 100%;
+    
+}
+
+
+.cv-section-content .cv-timeline .cv-time-company
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+    float: left;
+    
+   
+}
+
+
+.cv-section-content .cv-timeline .cv-time-date
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+    float: left;
+   
+}
+
+
+.cv-section .cv-section-content .cv-timeline .cv-timeline-side { margin-left: 0;}
+
+
+
+
+.cv-section .cv-section-content .cv-timeline .cv-timeline-side .cv-time-company h6
+{
+font-size: 12px;
+background: none;
+text-align: start;
+text-transform: none;
+
+}
+
+.cv-section .cv-section-content .cv-timeline .cv-timeline-side .cv-time-date p
+{
+font-size: 10px;
+margin-left: 40px;
+text-align: end;
+}
+
+.cv-section .cv-section-content .cv-timeline-body .cv-timeline-position 
+{
+    font-size: 18px;
+    color: var(--text-black-900);
+    text-align: justify;
+}
+
+
+
+
+.cv-section .cv-section-content .cv-timeline-body .cv-timeline-position ul li
+{
+    font-size: 12px;
+    
+}
+
+hr 
+{
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+}
+ 
+
+
+
 
  
 @media screen and (max-width: 375px) 
@@ -1322,6 +1796,44 @@ section.open
     line-height: 20px;
 }
 
+.cv-section .cv-header-text,
+.cv-section .cv-header-avatar,
+.cv-section .cv-header-social
+{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cv-section .cv-header-avatar
+{
+    margin-left: 60px;
+}
+
+
+
+.cv-section .cv-header-text p
+{
+  
+    font-size: 14px;
+    text-align: center;
+    margin-left: -20px;
+margin-bottom: 10px;
+}
+
+
+.cv-section .cv-header-social .meta-social li
+{
+    font-size: 12px;
+    margin-left: -10px;
+    display: block;
+    line-height: 0.5;
+    text-align: center;
+  
+    
 }
 
 }
+

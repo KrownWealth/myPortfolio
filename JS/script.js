@@ -1,11 +1,3 @@
-/*=============typing================*/
-var typed = new Typed(".typing",{
-strings:["Web Developer", "Web Designer"],
-typeSpeed:100,
-BackSpeed:60,
-lopp:true
-})
-
 /*=============sidebar================*/
 
 const nav = document.querySelector(".nav"),
