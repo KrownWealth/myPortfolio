@@ -67,6 +67,7 @@ section.active {
   display: none !important;
 }
 
+
 @keyframes slideSection {
   0% {
     transform: translateX(100%);
@@ -308,7 +309,7 @@ SIDE-BAR
 }
 
 .social p {
-  margin-top: 30px;
+  margin-top: 10px;
   padding-left: 20px;
   margin-bottom: 10px;
   color: var(--text-black-900);
@@ -411,7 +412,7 @@ About
 .about_section .about-content {
   flex: 0 0 100%;
   max-width: 100%;
-  margin-bottom: 80px;
+ 
 }
 .about_section .about-content .about-text {
   flex: 0 0 100%;
@@ -485,6 +486,14 @@ About
   max-width: 100%;
 }
 
+
+.about_section .about-content .skills .skill-item img 
+{
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+}
+
 .about_section .about-content .skills .skill-item h5 {
   line-height: 40px;
   font-weight: 600;
@@ -504,7 +513,7 @@ About
 .about_section .about-content .skills .skill-item {
   margin-bottom: 30px;
 }
-
+/*
 .about_section .about-content .skills .skill-item .progress .progress-in {
   position: absolute;
   left: 0;
@@ -522,6 +531,7 @@ About
   font-weight: 400;
   line-height: 40px;
 }
+*/
 
 .about_section .about-content .education,
 .about_section .about-content .experience {
@@ -556,6 +566,7 @@ about_section .about-content .timeline {
   border-radius: 10px;
   width: 100%;
   position: relative;
+ padding-bottom: 40px;
 }
 
 .about_section .about-content .timeline .timeline-item {
@@ -565,7 +576,7 @@ about_section .about-content .timeline {
 }
 
 .about_section .about-content .timeline .timeline-item:last-child {
-  padding-bottom: 0;
+  padding-bottom: 40px;
 }
 
 .about_section .about-content .timeline .timeline-item::before {
@@ -615,6 +626,12 @@ about_section .about-content .timeline {
   color: var(--text-black-700);
   padding-left: 10px;
   padding-right: 15px;
+}
+
+.about_section .about-content .timeline .timeline-text li 
+{
+  line-height: 2;
+  list-style-type: disc;
 }
 
 /*
@@ -736,23 +753,26 @@ Contact
 
 .contact_section .contact-content .contact-info li {
   font-weight: 600;
-  padding: 5px 0;
+ 
   font-size: 16px;
   color: var(--text-black-900);
   line-height: 40px;
 }
 
 .contact_section .contact-content .contact-info li a i {
-  margin-left: 20px;
+  
   color: var(--skin-color);
+  padding-left: 10px;
 }
 
 .contact_section .contact-content .contact-info li a span {
-  padding: 5px;
+  
   color: var(--skin-color);
   text-decoration: dashed;
+  padding-left: 20px;
 }
 
+/*
 .contact_section .contact-content .message p {
   font-size: 24px;
   margin-top: 30px;
@@ -779,6 +799,7 @@ Contact
   color: var(--text-black-700);
   height: 200px;
 }
+*/
 
 /*
 ===================
@@ -801,20 +822,38 @@ Portfolio
 }
 
 .portfolio_section .portfolio-item {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+ 
+  
+}
+
+.portfolio_section .portfolio-img {
   flex: 0 0 50%;
   max-width: 50%;
   margin-bottom: 30px;
-}
-
-.portfolio_section .portfolio-item-inner .details p {
-  margin-top: 20px;
+  margin-top: 30px;
+  padding: 20px;
 }
 
 .portfolio_section .portfolio-img img {
   width: 400px;
-  height: 400px;
-  display: block;
-  margin-bottom: 80px;
+  height: auto;
+  margin-bottom: 70px;
+ 
+  
+}
+
+
+.portfolio_section .portfolio-img .port-8 {
+  width: 400px;
+  height: 700px;
+  
+  margin-bottom: 70px;
+ 
+  
 }
 
 /*
@@ -843,6 +882,8 @@ body.cv-container {
   margin-bottom: 80px;
   padding: 80px;
 }
+
+
 
 .cv-section {
   display: flex;
@@ -1079,10 +1120,20 @@ Media Queries
 
   .portfolio_section .portfolio-img img {
     width: 300px;
-    height: 300px;
+    height: auto;
     display: block;
     margin-bottom: 50px;
   }
+
+  
+.portfolio_section .portfolio-img .port-8 {
+  width: 300px;
+  height: 600px;
+  display: block;
+  margin-bottom: 70px;
+ 
+  
+}
 
   .cv-container .cv-page {
     width: 90%;
@@ -1140,7 +1191,7 @@ Media Queries
 
   .portfolio_section .portfolio-img img {
     width: 320px;
-    height: 320px;
+    height: auto;
     display: block;
     margin-bottom: 50px;
   }
@@ -1212,6 +1263,16 @@ Media Queries
     display: none;
   }
 
+  .about_section .about-content .personal-info,
+  .about_section .about-content .skills
+   {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+
   .offer_section .offer-content .offer-text h3,
   .offer-content .offer-info h3 {
     font-size: 20px;
@@ -1257,16 +1318,16 @@ Media Queries
     margin-bottom: 20px;
   }
 
-  .portfolio_section .portfolio-item {
+  .portfolio_section .portfolio-img {
     flex: 0 0 100%;
     max-width: 100%;
+    padding: 40px;
     margin-bottom: 30px;
+    margin-top: 30px;
   }
-
-  .portfolio_section .portfolio-img img {
-    width: 365px;
-    height: 365px;
-  }
+  
+  
+    
 
   .contact_section .contact-content .message .message-box,
   .contact_section .contact-content .message textarea {
@@ -1403,13 +1464,36 @@ Media Queries
 }
 
 @media screen and (max-width: 375px) {
+  
   .portfolio_section .portfolio-heading h5 {
     font-size: 14px;
   }
-  .portfolio_section .portfolio-img img {
-    width: 250px;
-    height: 250px;
+  
+  .portfolio_section .portfolio-img {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
   }
+  
+.portfolio_section .portfolio-img img {
+  width: 300px;
+  height: auto;
+  margin-bottom: 70px;
+ 
+  
+}
+
+
+.portfolio_section .portfolio-img .port-8 {
+  width: 300px;
+  height: 700px;
+  
+  margin-bottom: 70px;
+ 
+  
+}
 
   .btn {
     font-size: 10px;
@@ -1457,4 +1541,5 @@ Media Queries
     line-height: 0.5;
     text-align: center;
   }
+
 }

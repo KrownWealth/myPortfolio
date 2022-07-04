@@ -1,7 +1,7 @@
 /*=============sidebar================*/
 
 const nav = document.querySelector(".nav"),
-    navList = nav.querySelectorAll("li"),
+    navList = nav.querySelectorAll("li",),
     totalNavList = navList.length;
     allSection = document.querySelectorAll("section"),
     totalSection = allSection.length;
