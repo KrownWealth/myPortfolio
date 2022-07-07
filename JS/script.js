@@ -1,4 +1,9 @@
 /*=============sidebar================*/
+const section = document.querySelector('.main-content section');
+const backdrop = document.createElement("div");
+backdrop.setAttribute('class', 'sidebar-backdrop');
+section.appendChild(backdrop);
+
 
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li",),
